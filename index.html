@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>GUI</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="./script/script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+    <script src="https://kit.fontawesome.com/e7df220bd7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="wrapper" id="infoWrapper">
+        <button onclick="firebase.auth().signOut()">sign out</button>
+        <p id="signedInAs" style="font-weight: normal;"> &nbsp; </p>
+    </div>
+    
+    <div class="wrapper" id="signInWrapper">
+        <h1>sign in</h1>
+        <input type="email" id="email" placeholder="email">
+        <input type="password" id="password" placeholder="password">
+        <br>
+        <button id="btn">sign in</button>
+    </div>
+
+    <hr>
+
+    <div class="wrapper" id="addWorkContent">
+        <h1>add engagement</h1>
+        <input type="text" id="name" placeholder="name">
+        <br>
+        <textarea id="description" placeholder="description"></textarea>
+
+        <div>
+            <p>Type:</p>
+            <input type="radio" name="type" id="itproject" value="IT - Project" checked> IT - Project
+            <br>
+            <input type="radio" name="type" id="creativeproject" value="Creative Project"> Creative Project
+            <br>
+            <input type="radio" name="type" id="otherproject" value="other"> other
+            <br>
+            <input type="text" placeholder="other" id="other" disabled>
+        </div>
+
+        <div id="platform">
+            <p>Platform:</p>
+            <input type="checkbox" id="windows" value="Windows"> Windows
+            <br>
+            <input type="checkbox" id="android" value="Android"> Android
+            <br>
+            <input type="checkbox" id="ios" value="IOS"> IOS
+            <br>
+            <input type="checkbox" id="web" value="Web"> Web
+        </div>
+        <button id="check">submit</button>
+    </div>
+
+    <hr>
+
+    <div class="wrapper" id="removeWorksWrapper">
+        <h1>remove engagement</h1>
+    </div>
+</body>
+</html>

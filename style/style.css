@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Assistant&display=swap');
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    margin: 0 auto;
+    padding: 3vh 0 0 0;
+    font-family: 'Assistant', sans-serif;
+}
+
+.hide {
+    display: none;
+}
+
+.wrapper {
+    width: 90vw;
+    height: auto;
+    padding: 0 5vw;
+    margin-bottom: 6vh;
+}
+
+hr {
+    width: 95%;
+    margin: 6vh auto;
+    border: .7px lightgray solid;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid lightgray;
+    outline: none;
+    transition: 300ms ease-in-out border-color;
+}
+
+input:focus {
+    border-color: darkgray;
+}
+
+button {
+    border: none;
+    outline: none;
+    background: transparent;
+    border: 1px solid #486491;
+    border-radius: 5px;
+    padding: .5vw;
+    cursor: pointer;
+    user-select: none;
+    transition: background 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+button:hover {
+    background: #486491;
+    color: white;
+}
+
+#infoWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrapper p {
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+textarea {
+    width: 20vw;
+    min-height: 10vh;
+    resize: vertical;
+    font-family: 'Assistant', sans-serif;
+    outline: none;
+    margin-top: 3vh !important;
+}
+
+#check, #btn {
+    margin: 1vh 0;
+}
+
+#removeWorksWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.work {
+    background: white;
+    box-shadow: rgba(53, 53, 53, .3) 2px 2px 10px 4px;
+    padding: 1vh 1vw;
+    border-radius: 10px;
+    margin: 4vh 0;
+    width: 60%;
+}
+
+.work h2, .work p {
+    margin: 0;
+    font-weight: normal;
+}
+
+.iconWrapper {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    width: 55%;
+    color: red;
+}
+
+.icon {
+    cursor: pointer;
+}
