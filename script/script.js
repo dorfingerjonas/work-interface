@@ -59,6 +59,7 @@ window.addEventListener('load', () => {
         while (wrapper.childNodes.length > 3) wrapper.removeChild(wrapper.lastChild);
 
         printEngagements();
+        clearInputs();
     });
 
     function handleRadio() {
@@ -184,4 +185,34 @@ function printEngagements() {
         }
         
     });
+}
+
+function clearInputs() {
+    const inputs = [
+        document.getElementById('name'),
+        document.getElementById('description'),
+        document.getElementById('other')
+    ];
+
+    const boxes = [
+        document.getElementById('itproject'),
+        document.getElementById('creativeproject'),
+        document.getElementById('otherproject'),
+        document.getElementById('windows'),
+        document.getElementById('android'),
+        document.getElementById('ios'),
+        document.getElementById('web')
+    ];
+
+    for (const input of inputs) {
+        input.value = '';
+    }
+    
+    for (const box of boxes) {
+        console.log(box);
+        
+        box.checked = false;
+    }
+
+    boxes[0].checked = true;
 }
