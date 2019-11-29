@@ -54,6 +54,11 @@ window.addEventListener('load', () => {
                 timestamp: timestamp
             });
         }
+
+        const wrapper = document.getElementById('removeWorksWrapper');
+        while (wrapper.childNodes.length > 3) wrapper.removeChild(wrapper.lastChild);
+
+        printEngagements();
     });
 
     function handleRadio() {
