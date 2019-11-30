@@ -34,26 +34,26 @@ window.addEventListener('load', () => {
     });
     
     document.getElementById('check').addEventListener('click', () => {
-        const timestamp = new Date().getTime();
+        const key = new Date().getTime();
         const name = document.getElementById('name');
         const description = document.getElementById('description');
         const priority = document.getElementById('priority');
 
         if (getSelectedRadioValue() === 'IT - Project') {
-            firebase.database().ref('/public/work/' + timestamp).set({
+            firebase.database().ref('/public/work/' + key).set({
                 name: name.value,
                 description: description.value,
                 type: getSelectedRadioValue(),
                 platform: getSelectedPlatforms(),
-                timestamp: timestamp,
+                key: key,
                 priority: priority.value
             });
         } else {
-            firebase.database().ref('/public/work/' + timestamp).set({
+            firebase.database().ref('/public/work/' + key).set({
                 name: name.value,
                 description: description.value,
                 type: getSelectedRadioValue(),
-                timestamp: timestamp,
+                key: key,
                 priority: priority.value
             });
         }
@@ -151,7 +151,7 @@ function printEngagements() {
             icon.addEventListener('click', () => {
                 contentWrapper.removeChild(newWork);
 
-                firebase.database().ref('/public/work/' + work.timestamp).remove();
+                firebase.database().ref('/public/work/' + work.key).remove();
             });
 
             iconWrapper.appendChild(icon);
