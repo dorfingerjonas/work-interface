@@ -37,6 +37,7 @@ window.addEventListener('load', () => {
         const timestamp = new Date().getTime();
         const name = document.getElementById('name');
         const description = document.getElementById('description');
+        const priority = document.getElementById('priority');
 
         if (getSelectedRadioValue() === 'IT - Project') {
             firebase.database().ref('/public/work/' + timestamp).set({
@@ -44,14 +45,16 @@ window.addEventListener('load', () => {
                 description: description.value,
                 type: getSelectedRadioValue(),
                 platform: getSelectedPlatforms(),
-                timestamp: timestamp
+                timestamp: timestamp,
+                priority: priority.value
             });
         } else {
             firebase.database().ref('/public/work/' + timestamp).set({
                 name: name.value,
                 description: description.value,
                 type: getSelectedRadioValue(),
-                timestamp: timestamp
+                timestamp: timestamp,
+                priority: priority.value
             });
         }
 
@@ -179,6 +182,11 @@ function printEngagements() {
                 newWork.appendChild(platformWrapper);
             }
 
+            const priority = document.createElement('p');
+            priority.textContent = `Priotity: ${work.priority}`;
+
+            newWork.appendChild(priority);
+
             newWork.classList.add('work');
 
             contentWrapper.appendChild(newWork);
@@ -191,7 +199,8 @@ function clearInputs() {
     const inputs = [
         document.getElementById('name'),
         document.getElementById('description'),
-        document.getElementById('other')
+        document.getElementById('other'),
+        document.getElementById('priority')
     ];
 
     const boxes = [
